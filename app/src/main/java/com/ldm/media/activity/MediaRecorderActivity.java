@@ -33,8 +33,11 @@ public class MediaRecorderActivity extends AppCompatActivity {
     SurfaceView mediaSf;
     @BindView(R.id.video_bt)
     Button videoBt;
+    @BindView(R.id.stop)
+    Button stop;
     private MediaRecorder mediaRecorder;
     private int count;
+    private boolean isStart;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -68,6 +71,7 @@ public class MediaRecorderActivity extends AppCompatActivity {
                 mHandler.removeCallbacksAndMessages(null);
                 count = 0;
                 stop();
+                videoBt.setText("录像");
                 break;
         }
     }

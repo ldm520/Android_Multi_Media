@@ -46,7 +46,7 @@ import butterknife.OnClick;
  * release()：释放资源
  */
 public class MediaMuxerActivity extends AppCompatActivity {
-    private final String FILE_PATH = FileUtil.getSaveFile(getPackageName(), "ldm.mp4").getAbsolutePath();
+    private  String filPath;
     @BindView(R.id.mix_path)
     TextView mixPath;
     //多媒体提取器
@@ -59,7 +59,8 @@ public class MediaMuxerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mediamuxer);
         ButterKnife.bind(this);
-        mixPath.setText("文件路径：" + FILE_PATH);
+        filPath = FileUtil.getSaveFile(getPackageName(), "ldm.mp4").getAbsolutePath();
+        mixPath.setText("文件路径：" + filPath);
     }
 
     @OnClick({R.id.start_muxer})
@@ -78,7 +79,7 @@ public class MediaMuxerActivity extends AppCompatActivity {
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private boolean process() throws IOException {
         mMediaExtractor = new MediaExtractor();
-        mMediaExtractor.setDataSource(FILE_PATH);
+        mMediaExtractor.setDataSource(filPath);
         int mVideoTrackIndex = -1;
         int framerate = 0;
         for (int i = 0; i < mMediaExtractor.getTrackCount(); i++) {
