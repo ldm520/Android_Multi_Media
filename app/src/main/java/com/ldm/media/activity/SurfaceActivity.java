@@ -10,7 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ldm.media.R;
 import com.ldm.media.surface.CameraGLSurfaceView;
-
+/**
+  *@作者 ldm
+  *@时间  2019/12/27 14:39
+  *@描述 SurfaceView录制视频
+  */
 public class SurfaceActivity  extends AppCompatActivity {
 
     private CameraGLSurfaceView mCameraSurfaceView;
@@ -27,11 +31,9 @@ public class SurfaceActivity  extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(mIsRecording){
-                    Log.i("MainActivity", "stop recording");
                     mCameraSurfaceView.stopRecord();
                     mRecordCtrlBtn.setText("开始录制");
                 }else{
-                    Log.i("MainActivity", "start recording");
                     mCameraSurfaceView.startRecord();
                     mRecordCtrlBtn.setText("停止录制");
                 }
