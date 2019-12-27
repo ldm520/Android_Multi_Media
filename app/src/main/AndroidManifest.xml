@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ldm.media">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:glEsVersion="0x00030002"
+        android:required="true" />
+
+    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SurfaceActivity" />
+        <activity android:name=".activity.EncodeYUVToH264Activity" />
+        <activity android:name=".activity.H264ToMp4" />
+        <activity android:name=".activity.Mp3ToAacActivity" />
+        <activity android:name=".activity.MediaMuxerActivity" />
+        <activity android:name=".activity.SurfaceAndTextureActivity" />
+        <activity android:name=".activity.Pcm2WavActivity" />
+        <activity android:name=".activity.OpenGlActivity" />
+        <activity android:name=".activity.SurfaceViewActivity" />
+        <activity android:name=".activity.TextureViewActivity" />
+        <activity android:name=".activity.CameraSurfaceViewActivity" />
+        <activity android:name=".activity.MediaRecorderActivity" />
+        <activity
+            android:name=".activity.OpenGlActivity"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name=".activity.VideoViewActivity" />
+        <activity android:name=".activity.MediaPlayerActivity" />
+    </application>
+
+</manifest>
